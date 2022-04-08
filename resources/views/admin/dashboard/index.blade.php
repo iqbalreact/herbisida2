@@ -113,6 +113,7 @@
                                         {{-- <h4 class="mb-0">1 Ruang</h4> --}}
 
                                         <p>Aplikasi Prediksi Penjualan Produk Herbisida PT. Lisnah Sentosa Agro
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nam illo laborum voluptate rerum inventore tempore eligendi, molestiae temporibus saepe?
                         
                                         </p>
 
