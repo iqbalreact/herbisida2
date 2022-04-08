@@ -105,7 +105,7 @@
 
                 <div class="form-group">
                     <label for="formrow-firstname-input">Kuantitas</label>
-                    <input type="number" name="kuantitas" min="0" class="form-control" placeholder="Masukan kuantitas" required>
+                    <input type="number" name="kuantitas" min="1" class="form-control" placeholder="Masukan kuantitas" required>
                 </div>
             </div>
             <div class="modal-footer">
@@ -144,7 +144,7 @@
 
                     <div class="form-group">
                         <label for="formrow-firstname-input">Kuantitas</label>
-                        <input type="number" name="kuantitas" min="0" class="form-control" placeholder="Masukan kuantitas" id="kuantitas" required>
+                        <input type="number" name="kuantitas" min="1" class="form-control" placeholder="Masukan kuantitas" id="kuantitas" required>
                     </div>
                 </div>
             </div>
