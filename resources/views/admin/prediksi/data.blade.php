@@ -30,7 +30,7 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th>No</th>
-                                    <th>Alpa</th>
+                                    {{-- <th>Alpa</th> --}}
                                     <th>Bulan dan Tahun</th>
                                     {{-- <th>Tahun</th> --}}
                                     <th>Jumlah Prediksi</th>
@@ -43,7 +43,7 @@
                                 @foreach ($data as $item)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{$item->alpha}}</td>
+                                    {{-- <td>{{$item->alpha}}</td> --}}
                                     <td>{{\Carbon\Carbon::parse($item->tanggal)->isoFormat('Do MMMM YYYY')}}</td>
                                     <td>{{$item->prediksi}} Kg</td>
                                     <td>

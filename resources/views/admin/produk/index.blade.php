@@ -14,14 +14,13 @@
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
                             <li class="breadcrumb-item active">Produk</li>
-                            {{-- <li class="breadcrumb-item active">Daftar Pengguna</li> --}}
                         </ol>
                     </div>
 
                 </div>
 
                 <div class="button-items mb-2">
-                    <button type="button" class="btn btn-success waves-effect btn-label waves-light" data-toggle="modal" data-target="#ModalPengguna"><i class="bx bx-user-plus label-icon"></i>Produk Baru</button>
+                    <button type="button" onclick="addProduk()" class="btn btn-success waves-effect btn-label waves-light" data-toggle="modal" data-target="#ModalPengguna"><i class="bx bx-user-plus label-icon"></i>Produk Baru</button>
                 </div>
             </div>
         </div>
@@ -84,7 +83,7 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="formrow-firstname-input">Kode Produk</label>
-                    <input type="text" name="kode" class="form-control" placeholder="Masukan Kode Produk" required>
+                    <input type="text" name="kode" id="kodeProduk" class="form-control" readonly placeholder="Masukan Kode Produk" required>
                 </div>
                 <div class="form-group">
                     <label for="formrow-firstname-input">Nama Produk</label>
@@ -150,13 +149,21 @@
 @section('js-pages')
 
 <script>
+    var kode = '{{url('admin/produk/kode/')}}'
+    function addProduk() {
+        $.get(kode, function(kodeProduk){
+            console.log(kodeProduk)
+            $('#kodeProduk').val(kodeProduk)
+        })
+    }
+</script>
+
+
+<script>
     var base = '{{url('admin/produk/id/')}}'
     function getUmkm(id) {
         var url = base+'/'+id
-        console.log(url);
         $.get(url, function(data){
-            // console.log(data);
-            // $('#id').val(data.id)
             $('#kode').val(data.kode)
             $('#nama_produk').val(data.nama_produk)
             $('#deskripsi').val(data.deskripsi)

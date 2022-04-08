@@ -23,6 +23,9 @@
                 {{-- <div class="button-items mb-2">
                     <button type="button" class="btn btn-success waves-effect btn-label waves-light" data-toggle="modal" data-target="#ModalPengguna"><i class="bx bx-user-plus label-icon"></i>Penjualan Baru</button>
                 </div> --}}
+                @if($errors->any())
+                <h5>{{$errors->first()}}</h5>
+                @endif
             </div>
         </div>
         <!-- end page title -->
@@ -37,7 +40,7 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="formrow-firstname-input">Pilih Produk</label>
-                                        <select name="kode" id="" class="form-control">
+                                        <select name="kode" id="" class="form-control" required>
                                             <option value="">Pilih</option>
                                             @foreach ($produk as $p)
                                             <option value="{{$p->kode}}">{{$p->nama_produk}}</option>
@@ -56,7 +59,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="reset" class="btn btn-secondary waves-effect" data-dismiss="modal">Reset</button>
-                                <button type="sumbit" class="btn btn-primary waves-effect waves-light">Prediksi</button>
+                                <button type="sumbit" class="btn btn-primary waves-effect waves-light" onclick="return confirm('Yakin untuk memprediksi?');">Prediksi</button>
                             </div>
                         </form>
                     </div>

@@ -23,6 +23,7 @@
                 {{-- <div class="button-items mb-2">
                     <button type="button" class="btn btn-success waves-effect btn-label waves-light" data-toggle="modal" data-target="#ModalPengguna"><i class="bx bx-user-plus label-icon"></i>Penjualan Baru</button>
                 </div> --}}
+
             </div>
         </div>
         <!-- end page title -->

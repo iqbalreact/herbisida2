@@ -27,11 +27,13 @@ Route::group(['middleware' => ['auth','revalidate']], function (){
     Route::group(['prefix' => 'admin'], function () {
         Route::get('/dashboard', 'HomeController@index')->name('dashboard');
         Route::get('/produk', 'ProdukController@Produk')->name('Produk');
+        Route::get('/produk/kode', 'ProdukController@getKode')->name('getKode');
         Route::get('/produk/id/{id}', 'ProdukController@getProduk')->name('getProduk');
         Route::post('/produk/add', 'ProdukController@addProduk')->name('addProduk');
         Route::post('/produk/update', 'ProdukController@updateProduk')->name('updateProduk');
         Route::get('/produk/delete/{id}', 'ProdukController@deleteProduk')->name('deleteProduk');
     
+        // Route::get('/prediksi', 'PrediksiController@index')->name('Prediksi');
         Route::get('/penjualan', 'PenjualanController@Penjualan')->name('Penjualan');
         Route::get('/penjualan/id/{id}', 'PenjualanController@getPenjualan')->name('getPenjualan');
         Route::post('/penjualan/add', 'PenjualanController@addPenjualan')->name('addPenjualan');
@@ -43,7 +45,7 @@ Route::group(['middleware' => ['auth','revalidate']], function (){
         Route::post('/prediksi/simpan', 'PrediksiController@simpan')->name('simpan-prediksi');
         Route::get('/prediksi/data', 'PrediksiController@data')->name('data-prediksi');
         Route::get('/prediksi/delete/{id}', 'PrediksiController@deletePrediksi')->name('deletePrediksi');
-    
+        
         // end route 
         Route::resource('/pengguna', 'UserController');
         Route::get('/pengguna/get/{id}', 'UserController@getPengguna')->name('get-pengguna');

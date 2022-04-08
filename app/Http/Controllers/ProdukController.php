@@ -10,6 +10,18 @@ use Auth;
 
 class ProdukController extends Controller
 {
+
+    public function getKode(){
+        if (count(Produk::all()) != null) {
+            $produk = Produk::max('kode');
+            $split = explode('-', $produk);
+            $kodeLanjutan = $split[1]+1;
+            return 'HRB-'.$kodeLanjutan;
+        } else {
+            return 'HRB-1';
+        }
+    }
+
     public function Produk(){
         $produk = Produk::all();
         return view ('admin.produk.index', compact('produk'));

@@ -8,13 +8,13 @@ class Penjualan extends Model
 {
     //
     //
-    protected $primaryKey = 'kode';
+    protected $primaryKey = 'id';
      /**
      * Indicates if the IDs are auto-incrementing.
      *
      * @var bool
      */
-    public $incrementing = false;
+    public $incrementing = true;
     public $timestamps = false;
 
     /**

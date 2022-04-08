@@ -42,7 +42,7 @@
                                     {{-- <th>Nama Produk</th> --}}
                                     <th>Tanggal</th>
                                     <th>Kuantitas</th>
-                                    <th>Satuan</th>
+                                    {{-- <th>Satuan</th> --}}
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -52,8 +52,7 @@
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$item->kode}}</td>
                                     <td>{{\Carbon\Carbon::parse($item->tanggal)->isoFormat('MMMM YYYY')}}</td>
-                                    <td>{{$item->kuantitas}}</td>
-                                    <td>Item</td>
+                                    <td>{{$item->kuantitas}} Item</td>
                                     <td>
                                         <div class="button-items">
                                             <button type="button" class="btn btn-warning btn-sm waves-effect waves-light" data-toggle="modal" data-target="#ModalEdit" onclick="getPenjualan('{{$item->id}}')" title="Edit"><i class="bx bx bx-pencil label-icon"></i> Edit</button>
@@ -97,7 +96,6 @@
                         <option value="{{$p->kode}}">{{$p->kode}} - {{$p->nama_produk}}</option>
                         @endforeach
                     </select>
-                    {{-- <input type="month" name="tanggal" class="form-control" required> --}}
                 </div>
 
                 <div class="form-group">
@@ -107,7 +105,7 @@
 
                 <div class="form-group">
                     <label for="formrow-firstname-input">Kuantitas</label>
-                    <input type="number" name="kuantitas" class="form-control" placeholder="Masukan kuantitas umkm" required>
+                    <input type="number" name="kuantitas" min="0" class="form-control" placeholder="Masukan kuantitas" required>
                 </div>
             </div>
             <div class="modal-footer">
@@ -146,7 +144,7 @@
 
                     <div class="form-group">
                         <label for="formrow-firstname-input">Kuantitas</label>
-                        <input type="number" name="kuantitas" class="form-control" placeholder="Masukan kuantitas" id="kuantitas" required>
+                        <input type="number" name="kuantitas" min="0" class="form-control" placeholder="Masukan kuantitas" id="kuantitas" required>
                     </div>
                 </div>
             </div>
@@ -177,7 +175,7 @@
         var url = base+'/'+id
         console.log(url);
         $.get(url, function(data){
-            // console.log(data);
+            console.log(data);
             $('#id').val(data.id)
             $('#kode').val(data.kode)
             $('#tanggal').val(data.tanggal)
